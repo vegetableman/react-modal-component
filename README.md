@@ -43,7 +43,7 @@ var Component = React.createClass({
 
     if (this.state.showModal) {
       node = (
-        <Modal transitionName='zoom'>
+        <Modal transitionName='fade'>
           <h3>Plain old Modal</h3>
           <button onClick={this.closeModal}>Close Dialog</button>
         </Modal>
