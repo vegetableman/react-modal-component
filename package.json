@@ -1,7 +1,7 @@
 {
   "name": "react-modal-component",
   "version": "0.0.0",
-  "description": "Yet another modal dialog built on react but simpler and supports react-style animations",
+  "description": "Yet another modal dialog built on react but with a simpler api and supports react-style animations",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

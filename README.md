@@ -1,5 +1,5 @@
 # React-modal-component
-Yet another modal dialog built on react but simpler and supports react-style animations.
+Yet another modal dialog built on react but with a simpler api and supports react-style animations. Inspired by https://github.com/rackt/react-modal.
 
 ## Example Usage
 
