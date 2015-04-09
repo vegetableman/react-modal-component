@@ -240,7 +240,7 @@ var TimeoutTransitionGroup = React.createClass({
     propTypes: {
         enterTimeout: React.PropTypes.number,
         leaveTimeout: React.PropTypes.number,
-        transitionName: React.PropTypes.string.isRequired,
+        transitionName: React.PropTypes.string,
         transitionEnter: React.PropTypes.bool,
         transitionLeave: React.PropTypes.bool,
         transitionAppear: React.PropTypes.bool

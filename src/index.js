@@ -48,8 +48,12 @@ var Modal = React.createClass({
     },
 
     componentWillUnmount: function() {
-        React.render(<_Modal {...this.props} children={null} onTransitionEnd={this.onTransitionEnd}/>,
+        if (this.props.transitionName) {
+            React.render(<_Modal {...this.props} children={null} onTransitionEnd={this.onTransitionEnd}/>,
                         this.node);
+        } else {
+            this.onTransitionEnd();
+        }
     }
 });
 
