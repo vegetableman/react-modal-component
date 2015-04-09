@@ -1,13 +1,14 @@
 {
   "name": "react-modal-component",
-  "version": "1.0.3",
-  "description": "Yet another modal dialog built on react but with a simpler api and supports react-style animations",
+  "version": "1.0.4",
+  "description": "Yet another modal dialog built on react but with a simpler api and support for react-style animations",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "example": "beefy example/browser.js --live -- -t [reactify --es6] -t brfs"
   },
   "author": "vegetableman <vegetablebot@gmail.com>",
+  "homepage": "https://github.com/vegetableman/react-modal-component",
   "license": "MIT",
   "devDependencies": {
     "beefy": "^2.1.3",
@@ -20,5 +21,20 @@
   },
   "dependencies": {
     "react": "^0.13.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vegetableman/react-modal-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vegetableman/react-modal-component/issues",
+    "email": "vegetablebot@gmail.com"
+  },
+  "keywords": [
+    "react",
+    "modal",
+    "dialog",
+    "transition",
+    "react-modal"
+  ]
 }
