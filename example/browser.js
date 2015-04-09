@@ -2,7 +2,7 @@ var insertCSS = require('insert-css');
 var domReady = require('domready');
 var domify = require('domify');
 var React = require('react')
-var Modal = require('react-modal-component');
+var Modal = require('../src/index');
 
 var fs = require('fs');
 var style = fs.readFileSync(__dirname+'/style.css', 'utf8');

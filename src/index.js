@@ -1,5 +1,5 @@
 var React = require('react');
-var TimeoutTransitionGroup = require('./lib/TimeoutTransitionGroup');
+var TimeoutTransitionGroup = require('./TimeoutTransitionGroup');
 
 var PropTypes = React.PropTypes;
 var ReactTransitionGroup = React.addons.TransitionGroup;

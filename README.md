@@ -68,7 +68,7 @@ var Component = React.createClass({
 
  optional :-
 
- Use ```modal.css``` included in this repo derived from [medium](https://medium.com) to support a responsive modal dialog.
+ Use [modal.css](./assets/modal.css) included in this repo derived from [medium](https://medium.com) to support a responsive modal dialog.
 
 ## API
 

@@ -15,9 +15,7 @@
  */
 
 var React = require('react/addons');
-
 var ReactTransitionGroup = React.addons.TransitionGroup;
-
 var TICK = 17;
 
 /**
