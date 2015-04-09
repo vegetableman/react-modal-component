@@ -1,10 +1,11 @@
 {
   "name": "react-modal-component",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Yet another modal dialog built on react but with a simpler api and support for react-style animations",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "gulp build",
     "example": "beefy example/browser.js --live -- -t [reactify --es6] -t brfs"
   },
   "author": "vegetableman <vegetablebot@gmail.com>",
