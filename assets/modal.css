@@ -30,7 +30,7 @@
 .overlay:before {
   content: '';
   display: inline-block;
-  height: 100%;
+  height: 80%;
   vertical-align: middle;
   margin-right: -0.25em;
 }
