@@ -94,6 +94,18 @@ DOM node where the modal is appended. (default: `document.body`)
 
 Transition name to base the animation on.
 
+### props.close
+
+Function to call to close the dialog. Required to support props `closeOnEsc` and `closeOnOutsideClick`.
+
+### props.closeOnEsc
+
+Boolean value to support closing of dialog on Esc. (default: `false`)
+
+### props.closeOnOutsideClick
+
+Boolean value to support closing of dialog on clicking outside the dialog. (default: `false`)
+
 ### props.enterTimeout
 
 (see below)
