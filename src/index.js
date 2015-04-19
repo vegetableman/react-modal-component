@@ -1,8 +1,28 @@
 var React = require('react');
 var TimeoutTransitionGroup = require('./TimeoutTransitionGroup');
+var domEvents = require('attach-dom-events');
+var selectParent = require('select-parent');
+
+attachEvents = domEvents.on;
+detachEvents = domEvents.off;
 
 var PropTypes = React.PropTypes;
 var ReactTransitionGroup = React.addons.TransitionGroup;
+var validateClosePropTypes = function(props, propName, componentName) {
+    var propValue = props[propName];
+   if (propValue != null && typeof propValue !== 'boolean') {
+     return new Error(
+       'Expected a boolean for ' + propName + ' in ' +
+       componentName + '.'
+     );
+   }
+   if(propValue && !props.close) {
+       return new Error(
+       'Expected a function for prop `close` in ' +
+       componentName + ', since prop `'+ propName + '` is set true.'
+     );
+   }
+};
 
 var Modal = React.createClass({
     displayName: 'Modal',
@@ -16,7 +36,10 @@ var Modal = React.createClass({
         transitionLeave: PropTypes.bool,
         transitionAppear: PropTypes.bool,
         enterTimeout: PropTypes.number,
-        leaveTimeout: PropTypes.number
+        leaveTimeout: PropTypes.number,
+        close: PropTypes.func,
+        closeOnEsc: validateClosePropTypes,
+        closeOnOutsideClick: validateClosePropTypes
     },
 
     getDefaultProps: function() {
@@ -26,7 +49,9 @@ var Modal = React.createClass({
           className: 'modal-dialog',
           transitionAppear: true,
           transitionEnter: true,
-          transitionLeave: true
+          transitionLeave: true,
+          closeOnEsc: false,
+          closeOnOutsideClick: false
         };
     },
 
@@ -39,11 +64,45 @@ var Modal = React.createClass({
         this.node.className = this.props.overlay;
         this.props.appendTo.appendChild(this.node);
         React.render(<_Modal {...this.props}/>, this.node);
+        if (this.props.closeOnOutsideClick) {
+            attachEvents(this.node, {
+                'click': this._closeOnOutsideClick
+            });
+        }
+        if (this.props.closeOnEsc) {
+            attachEvents(document.body, {
+                'keyup': this._closeOnEsc
+            });
+        }
+    },
+
+    _closeOnEsc: function(e) {
+        if (this.props.close && e.keyCode === 27) {
+            this.props.close();
+        }
+    },
+
+    _closeOnOutsideClick: function(e) {
+        if (this.props.close &&
+            !e.target.classList.contains(this.props.className) &&
+            !selectParent('.'+ this.props.className, e.target)) {
+            this.props.close();
+        }
     },
 
     onTransitionEnd: function() {
         React.unmountComponentAtNode(this.node);
         document.body.removeChild(this.node);
+        if (this.props.closeOnOutsideClick) {
+            detachEvents(this.node, {
+                'click': this._closeOnOutsideClick
+            });
+        }
+        if (this.props.closeOnEsc) {
+            detachEvents(document.body, {
+                'keyup': this._closeOnEsc
+            });
+        }
         this.node = null;
     },
 

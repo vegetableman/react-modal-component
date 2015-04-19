@@ -13,14 +13,14 @@ var SomePage = React.createClass({
     return { showDialog: false };
   },
   showDialog: function() {
-    this.setState({showDialog: true});
+    this.setState({showDialog: !this.state.showDialog});
   },
   closeDialog: function() {
     this.setState({showDialog: false});
   },
   render: function() {
     if (this.state.showDialog) {
-      node = (<Modal transitionName='zoom'>
+      node = (<Modal transitionName='zoom' closeOnEsc={true} closeOnOutsideClick={true} close={this.closeDialog}>
           <h3>Plain old Modal</h3>
           <button onClick={this.closeDialog}>Close Dialog</button>
         </Modal>)

@@ -23,7 +23,9 @@
     "reactify": "^1.1.0"
   },
   "dependencies": {
-    "react": "^0.13.1"
+    "attach-dom-events": "^1.0.0",
+    "react": "^0.13.1",
+    "select-parent": "^1.0.1"
   },
   "repository": {
     "type": "git",
