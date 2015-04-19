@@ -1,6 +1,6 @@
 {
   "name": "react-modal-component",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Yet another modal dialog built on react but with a simpler api and support for react-style animations",
   "main": "lib/index.js",
   "scripts": {
