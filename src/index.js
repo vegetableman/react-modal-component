@@ -50,6 +50,7 @@ var Modal = React.createClass({
           transitionAppear: true,
           transitionEnter: true,
           transitionLeave: true,
+          close: function() {},
           closeOnEsc: false,
           closeOnOutsideClick: false
         };
@@ -77,14 +78,13 @@ var Modal = React.createClass({
     },
 
     _closeOnEsc: function(e) {
-        if (this.props.close && e.keyCode === 27) {
+        if (e.keyCode === 27) {
             this.props.close();
         }
     },
 
     _closeOnOutsideClick: function(e) {
-        if (this.props.close &&
-            !e.target.classList.contains(this.props.className) &&
+        if (!e.target.classList.contains(this.props.className) &&
             !selectParent('.'+ this.props.className, e.target)) {
             this.props.close();
         }
