@@ -77,14 +77,15 @@ var Modal = React.createClass({
     },
 
     _closeOnEsc: function(e) {
-        if (e.keyCode === 27) {
+        if (e.keyCode === 27 && this.props.close) {
             this.props.close();
         }
     },
 
     _closeOnOutsideClick: function(e) {
         if (!e.target.classList.contains(this.props.className) &&
-            !selectParent('.'+ this.props.className, e.target)) {
+            !selectParent('.'+ this.props.className, e.target) &&
+            this.props.close) {
             this.props.close();
         }
     },
