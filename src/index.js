@@ -50,7 +50,6 @@ var Modal = React.createClass({
           transitionAppear: true,
           transitionEnter: true,
           transitionLeave: true,
-          close: function() {},
           closeOnEsc: false,
           closeOnOutsideClick: false
         };
